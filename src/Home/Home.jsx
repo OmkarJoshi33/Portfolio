@@ -6,7 +6,7 @@ import simplecalci from "../assets/images/simplecalci.png";
 import spotify from "../assets/images/spotify.png";
 import Todolist from "../assets/images/Todolist.png";
 import { VscOpenPreview } from "react-icons/vsc";
-import portfolio from "../assets/images/porfolio.png";
+import porfolio from "../assets/images/porfolio.png"
 
 import {
   FaHtml5,
@@ -156,7 +156,7 @@ function Home() {
                   Portfolio Website
                 </h3>
                 <img
-                  src={portfolio}
+                  src={porfolio}
                   alt="Portfolio Website"
                   className="rounded-xl w-full h-auto p-1"
                 />
