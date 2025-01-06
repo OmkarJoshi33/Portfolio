@@ -17,7 +17,6 @@ import {
   FaJava,
 } from "react-icons/fa";
 import { SiTailwindcss, SiMongodb, SiC } from "react-icons/si";
-import { useRef } from 'react';
 
 
 function Home() {
