@@ -6,8 +6,7 @@ import simplecalci from "../assets/simplecalci.png";
 import spotify from "../assets/spotify.png";
 import Todolist from "../assets/Todolist.png";
 import { VscOpenPreview } from "react-icons/vsc";
-import porfolio from "../assets/porfolio.png"
-
+import porfolio from "../assets/porfolio.png";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -19,12 +18,11 @@ import {
 } from "react-icons/fa";
 import { SiTailwindcss, SiMongodb, SiC, SiPostman, SiExpress } from "react-icons/si";
 
-
 function Home() {
   const [formStatus, setFormStatus] = useState({
     isSubmitting: false,
     isSubmitted: false,
-    error: null
+    error: null,
   });
 
   const handleSubmit = async (e) => {
@@ -34,16 +32,16 @@ function Home() {
     const formData = {
       name: e.target.user_name.value,
       email: e.target.user_email.value,
-      message: e.target.message.value
+      message: e.target.message.value,
     };
 
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {
+      const response = await fetch(`${import.meta.env.VITE_BASE_URL}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
       });
 
       if (!response.ok) {
@@ -53,23 +51,23 @@ function Home() {
       setFormStatus({
         isSubmitting: false,
         isSubmitted: true,
-        error: null
+        error: null,
       });
       e.target.reset();
-      
+
       // Show success message for 3 seconds
       setTimeout(() => {
         setFormStatus({
           isSubmitting: false,
           isSubmitted: false,
-          error: null
+          error: null,
         });
       }, 3000);
     } catch (error) {
       setFormStatus({
         isSubmitting: false,
         isSubmitted: false,
-        error: 'Failed to send message. Please try again.'
+        error: 'Failed to send message. Please try again.',
       });
     }
   };
@@ -87,7 +85,7 @@ function Home() {
               Welcome to My Website
             </h1>
             <p className="mt-4 text-xl text-gray-600 animate-fade-in-delay">
-              I'm Omkar, Web Development enthusiast .
+              I'm Omkar, Web Development enthusiast.
             </p>
             <a
               href="#about"
@@ -112,7 +110,7 @@ function Home() {
             <div className="text-center md:text-left">
               <h2 className="text-4xl font-bold text-gray-800">About Me</h2>
               <p className="mt-4 text-lg text-gray-600">
-                Hi, I'm Omkar! student in the final semester of my MSc program ,
+                Hi, I'm Omkar! Student in the final semester of my MSc program,
                 enthusiast in web development and MERN stack.
               </p>
             </div>
@@ -154,7 +152,6 @@ function Home() {
                 <FaPython className="text-5xl text-blue-400" />
                 <p className="mt-2 text-lg text-gray-600">Core Python</p>
               </div>
-            
               <div className="flex flex-col items-center">
                 <FaNodeJs className="text-5xl text-green-600" />
                 <p className="mt-2 text-lg text-gray-600">Node.js</p>
@@ -170,7 +167,6 @@ function Home() {
             </div>
           </div>
         </section>
-        {/* Projects Section */}
         <section id="projects" className="min-h-screen bg-gray-200 py-12">
           <div className="text-center">
             <h2 className="text-4xl font-bold text-gray-800">My Projects</h2>
@@ -179,7 +175,6 @@ function Home() {
               more!
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 px-4">
-              {/* Project Card 1 */}
               <div className="bg-white rounded-lg shadow-lg p-4 hover:scale-105 transition-transform duration-500 ease-in-out aspect-w-16 aspect-h-9">
                 <h3 className="text-xl font-semibold text-gray-800">
                   Spotify UI Clone
@@ -210,8 +205,6 @@ function Home() {
                   View on GitHub
                 </a>
               </div>
-
-              {/* Project Card 2 */}
               <div className="bg-white rounded-lg shadow-lg p-4 hover:scale-105 transition-transform duration-500 ease-in-out aspect-w-16 aspect-h-9">
                 <h3 className="text-xl font-semibold text-gray-800">
                   Portfolio Website
@@ -240,8 +233,6 @@ function Home() {
                   View on GitHub
                 </a>
               </div>
-
-              {/* Project Card 3 */}
               <div className="bg-white rounded-lg shadow-lg p-4 hover:scale-105 transition-transform duration-500 ease-in-out aspect-w-16 aspect-h-9">
                 <h3 className="text-xl font-semibold text-gray-800">
                   ToDoList
@@ -270,8 +261,6 @@ function Home() {
                   View on GitHub
                 </a>
               </div>
-
-              {/* Project Card 4 */}
               <div className="bg-white rounded-lg shadow-lg p-4 hover:scale-105 transition-transform duration-500 ease-in-out aspect-w-16 aspect-h-9">
                 <h3 className="text-xl font-semibold text-gray-800">
                   Simple-Calci
@@ -300,8 +289,6 @@ function Home() {
                   View on GitHub
                 </a>
               </div>
-
-              {/* Project Card 5 */}
               <div className="bg-white rounded-lg shadow-lg p-4 hover:scale-105 transition-transform duration-500 ease-in-out aspect-w-16 aspect-h-9">
                 <h3 className="text-xl font-semibold text-gray-800">
                   Coming Soon
@@ -310,26 +297,10 @@ function Home() {
                   Stay tuned! More exciting projects are on the way.
                   StackFlex- Social Media Site using MERN
                 </p>
-                {/* <a
-                  href="#"
-                  className="text-blue-500 hover:underline inline-block mr-8"
-                >
-                  <VscOpenPreview />
-                </a>
-                <a
-                  href="https://github.com/OmkarJoshi33"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 inline-block bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600 transition"
-                >
-                  View on GitHub
-                </a> */}
               </div>
             </div>
           </div>
         </section>
-
-        {/* Contact Section */}
         <section id="contact" className="min-h-screen bg-gray-100 py-12">
           <div className="text-center">
             <h2 className="text-4xl font-bold text-gray-800">Get in Touch</h2>
@@ -339,7 +310,6 @@ function Home() {
             </p>
           </div>
           <div className="mt-8 px-4 flex flex-col md:flex-row items-center justify-center gap-8">
-            {/* Contact Form */}
             <div className="w-full max-w-md bg-white shadow-lg rounded-lg p-6">
               <form onSubmit={handleSubmit}>
                 <div className="mb-4">
@@ -413,9 +383,6 @@ function Home() {
                 )}
               </form>
             </div>
-
-            {/* Contact Details */}
-           
           </div>
         </section>
       </div>
