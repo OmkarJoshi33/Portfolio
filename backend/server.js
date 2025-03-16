@@ -27,7 +27,7 @@ const transporter = nodemailer.createTransport({
 });
 
 // Contact form endpoint
-app.post('/api/contact', async (req, res) => {
+app.post('/', async (req, res) => {
   const { name, email, message } = req.body;
 
   // Validate request body
