@@ -31,7 +31,7 @@ app.get("/", (req, res) => {
 });
 
 // ✅ Contact Form Endpoint (Prevents Timeout)
-app.post("/sendMail", async (req, res) => {
+app.post("/", async (req, res) => {
   const { name, email, message } = req.body;
 
   // Validate input
