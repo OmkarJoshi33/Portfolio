@@ -36,7 +36,7 @@ function Home() {
     };
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_BASE_URL}`, {
+      const response = await fetch(`${import.meta.env.VITE_BASE_URL}/sendMail`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
