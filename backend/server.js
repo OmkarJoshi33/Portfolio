@@ -29,7 +29,7 @@ app.get("/msg", (req, res) => {
     res.send("hello there chutya");
 });
 // Contact form endpoint
-app.post('/', async (req, res) => {
+app.post('/api/', async (req, res) => {
      alert("chutya")
   const { name, email, message } = req.body;
 
