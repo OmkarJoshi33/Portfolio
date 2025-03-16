@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "../index.css";
 import NavBar from "../NavBar/NavBar";
-import me from "../assets/images/me.png";
-import simplecalci from "../assets/images/simplecalci.png";
-import spotify from "../assets/images/spotify.png";
-import Todolist from "../assets/images/Todolist.png";
+import me from "../assets/me.png";
+import simplecalci from "../assets/simplecalci.png";
+import spotify from "../assets/spotify.png";
+import Todolist from "../assets/Todolist.png";
 import { VscOpenPreview } from "react-icons/vsc";
-import porfolio from "../assets/images/porfolio.png"
+import porfolio from "../assets/porfolio.png"
 
 import {
   FaHtml5,
